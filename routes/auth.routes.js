@@ -14,7 +14,7 @@ router.post("/login", async (req, res, next) => {
         console.log(err, "1");
         const error = new Error(info.message);
         //console.log(error, "1.5");
-        return res.status(404).json({ message: info.message, status: 404 });
+        return res.status(404).json({ status: 404,message: info.message });
       }
       req.login(user, { session: false }, async (error) => {
         if (error) {
@@ -26,7 +26,7 @@ router.post("/login", async (req, res, next) => {
         //Sign the JWT token and populate the payload with the user email and id
         const token = jwt.sign({ user: body }, "top_secret");
         //Send back the token to the user
-        return res.json({ token, status: 200, message: info.message });
+        return res.json({ token, status: 200,user, message: info.message });
       });
     } catch (error) {
       return next(error);

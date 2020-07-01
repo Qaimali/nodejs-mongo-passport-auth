@@ -5,8 +5,9 @@ const passport = require("passport");
 var cors = require("cors");
 var app = express();
 app.use(cors());
+require("dotenv").config();
 //db connections
-const connectionstr = process.env.db_HOST || "mongodb://localhost:27017/Login";
+const connectionstr = process.env.MONGO_DB || "mongodb://localhost:27017/Login";
 mongoose
   .connect(connectionstr, {
     useNewUrlParser: true,
