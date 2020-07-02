@@ -16,3 +16,4 @@ Run `node app.js`
 `/auth/login` - it accepts email and password. It checks if the email and password are ok and a JWT token is sent back to the user
 
 `/user/profile` - in order to access the route you have to include the JWT token in the `authorization` header in the request.
+# highOnTour-backend
